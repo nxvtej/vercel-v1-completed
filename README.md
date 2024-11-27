@@ -1,4 +1,4 @@
-##steps
+## steps
 Install Node modules individually
 
 Connect your S3 or R2 bucket
