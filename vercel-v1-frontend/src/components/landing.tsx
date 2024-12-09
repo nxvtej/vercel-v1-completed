@@ -14,15 +14,15 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 // import dotenv from "dotenv";
 
-// const BACKEND_UPLOAD_URL = "https://deploy.100xnavi.com";
-const BACKEND_UPLOAD_URL = "http://localhost:8000";
+const BACKEND_UPLOAD_URL = "https://deploy.100xnavi.com";
+// const BACKEND_UPLOAD_URL = "http://localhost:8000";
 
 export function Landing() {
 	const [repoUrl, setRepoUrl] = useState("");
 	const testing = "https://github.com/nxvtej/vercel-test";
 	const [uploadId, setUploadId] = useState("");
 	const BACKEND_HANDLE_URL = `https://${uploadId}.deployed.100xnavi.com/index.html`;
-	const BACKEND_HANDLE_URL_LOCAL = `http://${uploadId}.localhost:3001/index.html`;
+	// const BACKEND_HANDLE_URL_LOCAL = `http://${uploadId}.localhost:3001/index.html`;
 	const [uploading, setUploading] = useState(false);
 	const [deployed, setDeployed] = useState(false);
 	const [status, setStatus] = useState("");
@@ -72,7 +72,7 @@ export function Landing() {
 								placeholder='https://github.com/nxvtej/vercel-test'
 							/>
 							<Input
-								placeholder='enter custom name'
+								placeholder='enter custom name (small caps only)'
 								onChange={(e) => {
 									setId(e.target.value);
 								}}
@@ -137,12 +137,12 @@ export function Landing() {
 								id='deployed-url'
 								readOnly
 								type='url'
-								value={BACKEND_HANDLE_URL_LOCAL}
+								value={BACKEND_HANDLE_URL}
 							/>
 						</div>
 						<br />
 						<Button className='w-full' variant='outline' disabled={!deployed}>
-							<a href={BACKEND_HANDLE_URL_LOCAL} target='_blank'>
+							<a href={BACKEND_HANDLE_URL} target='_blank'>
 								{deployed ? "Visit Website" : `${status}`}
 							</a>
 						</Button>
